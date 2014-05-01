@@ -31,7 +31,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?= $this->url('application') ?>">tl;dev</a>
+            <a class="navbar-brand" href="<?= $this->url('index', array('uri' => 'index.'.$this->randomExtension())) ?>">tl;dev</a>
         </div>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
             <ul class="nav navbar-nav">
@@ -39,7 +39,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="https://github.com/tldev" target="_blank">github</a></li>
-                <li><a href="<?= $this->url('application/about') ?>">about</a></li>
+                <li><a href="<?= $this->url('about', array('uri' => 'about.'.$this->randomExtension())) ?>">about</a></li>
             </ul>
         </div>
     </div>
@@ -48,7 +48,7 @@
             <hr>
             <footer>
                 <p>
-                    <a href="<?= $this->url('application/lazy') ?>">&copy; <?php echo date('Y') ?> Tom Johnell</a>
+                    <a href="<?= $this->url('lazy', array('uri' => 'lazy.'.$this->randomExtension())) ?>">&copy; <?php echo date('Y') ?> Tom Johnell</a>
                     <small><a href="https://github.com/tldev/tldev" target="_blank">tldev/tldev</a></small>
                 </p>
             </footer>

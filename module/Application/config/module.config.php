@@ -3,37 +3,41 @@
 return array(
     'router' => array(
         'routes' => array(
-            'application' => array(
-                'type'    => 'Literal',
+            'index' => array(
+                'type'    => 'regex',
                 'options' => array(
-                    'route'    => '/',
+                    'regex'    => '\/(?P<uri>((index)?(\.[a-zA-Z]+)?)?)',
+                    'spec' => '/%uri%',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Application\Controller',
                         'controller'    => 'Index',
                         'action'        => 'index',
                     ),
                 ),
-                'may_terminate' => true,
-                'child_routes' => array(
-                    'about' => array(
-                        'type' => 'Literal',
-                        'options' => array(
-                            'route' => 'about',
-                            'defaults' => array(
-                                'action' => 'about'
-                            )
-                        )
-                    ),
-                    'lazy' => array(
-                        'type' => 'Literal',
-                        'options' => array(
-                            'route' => 'lazy',
-                            'defaults' => array(
-                                'action' => 'lazy'
-                            )
-                        )
+            ),
+            'about' => array(
+                'type' => 'regex',
+                'options' => array(
+                    'regex' => '\/(?P<uri>(about)(\.[a-zA-Z]+)?)',
+                    'spec' => '/%uri%',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller' => 'Index',
+                        'action' => 'about'
                     )
-                ),
+                )
+            ),
+            'lazy' => array(
+                'type' => 'regex',
+                'options' => array(
+                    'regex' => '\/(?P<uri>(lazy)(\.[a-zA-Z]+)?)',
+                    'spec' => '/%uri%',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller' => 'Index',
+                        'action' => 'lazy',
+                    )
+                )
             ),
         ),
     ),
@@ -41,12 +45,20 @@ return array(
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
+        ),
+        'invokables' => array(
+            'Application\Service\UriMadness' => 'Application\Service\UriMadness'
         )
     ),
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController'
         ),
+    ),
+    'view_helpers' => array(
+        'factories' => array(
+            'randomExtension' => 'Application\View\Helper\Factory\RandomExtensionFactory'
+        )
     ),
     'view_manager' => array(
         'display_not_found_reason' => true,
