@@ -47,7 +47,10 @@
             <?php echo $this->content; ?>
             <hr>
             <footer>
-                <p><a href="<?= $this->url('application/lazy') ?>">&copy; <?php echo date('Y') ?> Tom Johnell</a> </p>
+                <p>
+                    <a href="<?= $this->url('application/lazy') ?>">&copy; <?php echo date('Y') ?> Tom Johnell</a>
+                    <small><a href="https://github.com/tldev/tldev" target="_blank">tldev/tldev</a></small>
+                </p>
             </footer>
         </div> <!-- /container -->
         <?php echo $this->inlineScript() ?>
