@@ -1,4 +1,4 @@
-tldev
-=====
+thelazydeveloper
+================
 
-tldev website
+the thelazydeveloper.com site
