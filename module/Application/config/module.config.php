@@ -15,7 +15,24 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-
+                    'about' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => 'about',
+                            'defaults' => array(
+                                'action' => 'about'
+                            )
+                        )
+                    ),
+                    'lazy' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => 'lazy',
+                            'defaults' => array(
+                                'action' => 'lazy'
+                            )
+                        )
+                    )
                 ),
             ),
         ),

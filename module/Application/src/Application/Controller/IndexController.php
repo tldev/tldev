@@ -11,4 +11,20 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+
+    public function aboutAction() {
+        $date = new \DateTime('2011-06-26'); //When I started at booj
+        $interval = $date->diff(new \DateTime());
+
+
+        return new ViewModel(
+            array(
+                'years' => $interval->format('%y')
+            )
+        );
+    }
+
+    public function lazyAction() {
+        return new ViewModel();
+    }
 }
