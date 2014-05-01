@@ -57,6 +57,7 @@ return array(
     ),
     'view_helpers' => array(
         'factories' => array(
+            'author' => 'Application\View\Helper\Factory\AuthorFactory',
             'randomExtension' => 'Application\View\Helper\Factory\RandomExtensionFactory'
         )
     ),
