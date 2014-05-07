@@ -39,20 +39,85 @@ return array(
                     )
                 )
             ),
+            'blog' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/blog',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller' => 'Blog',
+                        'action' => 'index'
+                    )
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'add' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/add',
+                            'defaults' => array(
+                                'action' => 'add'
+                            )
+                        )
+                    ),
+                    'edit' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/edit',
+                            'defaults' => array(
+                                'action' => 'edit'
+                            )
+                        )
+                    )
+                )
+            ),
+            'markdown' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/markdown',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller' => 'Markdown',
+                        'action' => 'index'
+                    )
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'markdown-to-html' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/markdown-to-html',
+                            'defaults' => array(
+                                'action' => 'markdown-to-html'
+                            )
+                        )
+                    )
+                )
+            )
         ),
     ),
     'service_manager' => array(
+        'factories' => array(
+            'Application\Service\FormCreator' => 'Application\Service\Factory\FormCreatorFactory',
+            'Application\Service\BlogPublisher' => 'Application\Service\Factory\BlogPublisherFactory',
+            'blogger' => 'Application\Service\Factory\BloggerFactory',
+        ),
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
+            'Application\Repository\Factory\AbstractRepositoryFactory'
         ),
         'invokables' => array(
             'Application\Service\UriMadness' => 'Application\Service\UriMadness'
         )
     ),
     'controllers' => array(
+        'factories' => array(
+            'Application\Controller\Blog' => 'Application\Controller\Factory\BlogControllerFactory'
+        ),
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Markdown' => 'Application\Controller\MarkdownController'
         ),
     ),
     'view_helpers' => array(
@@ -102,6 +167,24 @@ return array(
                     'dbname'   => 'tldev',
                 )
             )
+        ),
+        'eventmanager' => array(
+            'orm_default' => array(
+                'subscribers' => array(
+                    'Gedmo\SoftDeleteable\SoftDeleteableListener',
+                    'Gedmo\Timestampable\TimestampableListener'
+                )
+            )
+        ),
+        'configuration' => array(
+            'orm_default' => array(
+                'filters' => array(
+                    'soft-deleteable' => 'Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter'
+                )
+            )
+        ),
+        'repositories' => array(
+            'blog-repo' => 'Application\Entity\Blog'
         )
     )
 );

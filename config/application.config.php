@@ -6,7 +6,8 @@ return array(
         'DoctrineORMModule',
         //'ZendDeveloperTools',
         'Application',
-        'LifecycleEvents'
+        'LifecycleEvents',
+        'TwbBundle'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
