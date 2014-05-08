@@ -132,6 +132,9 @@ return array(
         ),
     ),
     'view_helpers' => array(
+        'invokables' => array(
+            'disqus' => 'Application\View\Helper\Disqus'
+        ),
         'factories' => array(
             'author' => 'Application\View\Helper\Factory\AuthorFactory',
             'randomExtension' => 'Application\View\Helper\Factory\RandomExtensionFactory'
