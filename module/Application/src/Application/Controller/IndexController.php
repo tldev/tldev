@@ -27,4 +27,8 @@ class IndexController extends AbstractActionController
     public function lazyAction() {
         return new ViewModel();
     }
+
+    public function markersAction() {
+        return array();
+    }
 }

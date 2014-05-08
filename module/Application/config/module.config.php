@@ -39,6 +39,17 @@ return array(
                     )
                 )
             ),
+            'markers' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/numbered-google-map-markers',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller' => 'Index',
+                        'action' => 'markers',
+                    )
+                )
+            ),
             'blog' => array(
                 'type' => 'Literal',
                 'options' => array(
