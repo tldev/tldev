@@ -85,6 +85,26 @@ li.L5, li.L6, li.L7, li.L8 {
     top: 50px;
 }
 
+#mobile-images {
+    position: relative;
+    top:50px;
+}
+
+.swipe {
+    overflow: hidden;
+    visibility: hidden;
+    position: relative;
+}
+.swipe-wrap {
+    overflow: hidden;
+    position: relative;
+}
+.swipe-wrap > div {
+    float:left;
+    width:100%;
+    position: relative;
+}
+
 #github-feed {
     width: 700px;
     margin: 0 auto;

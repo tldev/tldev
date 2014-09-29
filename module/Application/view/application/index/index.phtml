@@ -2,6 +2,7 @@
 <?php $this->headLink()->appendStylesheet('css/github-activity.min.css') ?>
 <?php $this->inlineScript()->appendFile('//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js') ?>
 <?php $this->inlineScript()->appendFile($this->basePath() . 'js/github-activity.min.js') ?>
+<?php $this->inlineScript()->appendFile($this->basePath() . 'js/swipe.js') ?>
 <?php
 $js = <<<JS
     GitHubActivity.feed({
@@ -17,6 +18,8 @@ $js = <<<JS
              </div>'
         }
     });
+
+    Swipe(document.getElementById('mobile-slider'), {auto:5000});
 JS;
 $this->inlineScript()->appendScript($js)
 ?>
@@ -29,7 +32,7 @@ $this->inlineScript()->appendScript($js)
             When I'm not busy building web applications, I'm watching football and contributing to open-source.
         </p>
 </div>
-<div id="main-images" class="container">
+<div id="main-images" class="container hidden-xs hidden-sm hidden-md">
     <div class="col-lg-4">
         <img class="img-responsive center-block" src="img/pic-bronco.png" />
     </div>
@@ -38,6 +41,21 @@ $this->inlineScript()->appendScript($js)
     </div>
     <div class="col-lg-4">
         <img class="img-responsive center-block" src="img/pic-team.png" />
+    </div>
+</div>
+<div id="mobile-images" class="container visible-xs visible-sm visible-md">
+    <div id="mobile-slider" class="swipe" >
+        <div class="swipe-wrap">
+            <div>
+                <img class="img-responsive center-block" src="img/pic-bronco.png">
+            </div>
+            <div>
+                <img class="img-responsive center-block" src="img/pic-guitar.png">
+            </div>
+            <div>
+                <img class="img-responsive center-block" src="img/pic-team.png">
+            </div>
+        </div>
     </div>
 </div>
 <div id="pg-capabilities">
