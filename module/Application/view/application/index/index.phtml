@@ -1,17 +1,32 @@
 <?php $this->headLink()->appendStylesheet('//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css') ?>
-<?php $this->headLink()->appendStylesheet('//caseyscarborough.github.io/github-activity/github-activity-0.1.0.min.css') ?>
+<?php $this->headLink()->appendStylesheet('css/github-activity.min.css') ?>
 <?php $this->inlineScript()->appendFile('//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js') ?>
 <?php $this->inlineScript()->appendFile($this->basePath() . 'js/github-activity.min.js') ?>
-<?php $this->inlineScript()->captureStart(); ?>
-GitHubActivity.feed({ username: "tldev", selector: "#github-feed", limit:5 });
-<?php $this->inlineScript()->captureEnd(); ?>
+<?php
+$js = <<<JS
+    GitHubActivity.feed({
+        username: "tldev",
+        selector: "#github-feed",
+        limit:5,
+        templates: {
+            Footer: '',
+            SingleLineActivity: '<div id="{{id}}" class="gha-activity">\
+               <div class="gha-activity-icon"><span class="octicon octicon-{{icon}}"></span></div>\
+               <div class="gha-message"><div class="gha-time">{{{timeString}}}</div>{{{userLink}}} {{{message}}}</div>\
+               <div class="gha-clear"></div>\
+             </div>'
+        }
+    });
+JS;
+$this->inlineScript()->appendScript($js)
+?>
 <div id="pg-me" class="container text-center">
         <div class="hero-unit">
             Hello.
         </div>
         <h1>I'm Thomas Johnell.</h1>
         <p>
-            When I'm not building web applications, I'm watching football and contributing to open-source.
+            When I'm not busy building web applications, I'm watching football and contributing to open-source.
         </p>
 </div>
 <div id="main-images" class="container">
@@ -31,7 +46,7 @@ GitHubActivity.feed({ username: "tldev", selector: "#github-feed", limit:5 });
         <p>PHP</p>
         <p>MySQL</p>
         <p>OOP</p>
-        <p>Javacript</p>
+        <p>Javascript</p>
         <p>SVN/Git</p>
         <button type="button" class="btn btn-lg">
             <a href="#">
@@ -43,5 +58,12 @@ GitHubActivity.feed({ username: "tldev", selector: "#github-feed", limit:5 });
 <div id="pg-github">
     <div class="container">
         <div id="github-feed" style="position: relative"></div>
+    </div>
+    <div class="container text-center">
+        <button type="button" class="btn btn-lg">
+            <a target="_blank" href="https://github.com/tldev">
+                my github
+            </a>
+        </button>
     </div>
 </div>

@@ -20,24 +20,35 @@
 <div class="navbar navbar-static-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="<?= $this->url('index', array('uri' => 'index.'.$this->randomExtension())) ?>">
-                <img src="img/glasses.png" class="hidden-xs"/>
-                THE LAZY DEVELOPER
-            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="<?= $this->url('index', array('uri' => '')) ?>">
+                <img src="img/glasses.png" class="hidden-xs"/>THE LAZY DEVELOPER</a>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://github.com/tldev" target="_blank">github</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">contact</a></li>
-        </ul>
+        <div class="navbar-collapse collapse no-transition">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://github.com/tldev" target="_blank">github</a></li>
+                <li><a href="<?= $this->url('about', array('uri' => 'about')) ?>">about</a></li>
+                <li><a href="<?= $this->url('contact') ?>">contact</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 <?php echo $this->content; ?>
 <div class="footer">
     <div class="container">
-        <p>
-            footer
-        </p>
+        <ul class="list-unstyled list-inline text-center">
+            <li><a target="_blank" href="http://www.linkedin.com/pub/thomas-johnell/90/b16/3ba">linkedin</a></li>
+            <li><a target="_blank" href="https://www.facebook.com/thomas.johnell">facebook</a></li>
+            <li><a target="_blank" href="https://github.com/tldev">github</a></li>
+            <li><a target="_blank" href="https://plus.google.com/u/0/117288347138080289706/">google+</a></li>
+            <li><a target="_blank" href="http://www.reddit.com/user/tjohnell/">reddit</a></li>
+            <li><a target="_blank" href="https://twitter.com/tjohnell">twitter</a></li>
+        </ul>
     </div>
 </div>
 <?php echo $this->inlineScript()

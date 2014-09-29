@@ -31,4 +31,8 @@ class IndexController extends AbstractActionController
     public function markersAction() {
         return array();
     }
+
+    public function contactAction() {
+        return array();
+    }
 }

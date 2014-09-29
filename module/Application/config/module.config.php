@@ -27,6 +27,17 @@ return array(
                     )
                 )
             ),
+            'contact' => array(
+                'type'    => 'literal',
+                'options' => array(
+                    'route'    => '/contact',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller'    => 'Index',
+                        'action'        => 'contact',
+                    ),
+                ),
+            ),
             'lazy' => array(
                 'type' => 'regex',
                 'options' => array(
@@ -47,38 +58,6 @@ return array(
                         '__NAMESPACE__' => 'Application\Controller',
                         'controller' => 'Index',
                         'action' => 'markers',
-                    )
-                )
-            ),
-            'blog' => array(
-                'type' => 'Literal',
-                'options' => array(
-                    'route' => '/blog',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Application\Controller',
-                        'controller' => 'Blog',
-                        'action' => 'index'
-                    )
-                ),
-                'may_terminate' => true,
-                'child_routes' => array(
-                    'add' => array(
-                        'type' => 'Literal',
-                        'options' => array(
-                            'route' => '/add',
-                            'defaults' => array(
-                                'action' => 'add'
-                            )
-                        )
-                    ),
-                    'edit' => array(
-                        'type' => 'Literal',
-                        'options' => array(
-                            'route' => '/edit',
-                            'defaults' => array(
-                                'action' => 'edit'
-                            )
-                        )
                     )
                 )
             ),
