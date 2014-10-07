@@ -56,6 +56,10 @@ li.L5, li.L6, li.L7, li.L8 {
     background-color: #000000;
 }
 
+.navbar-brand img {
+    padding-right: 15px;
+}
+
 .btn a {
     color: #ffffff;
 }
