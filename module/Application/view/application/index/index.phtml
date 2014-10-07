@@ -1,4 +1,3 @@
-<?php $this->headLink()->appendStylesheet('//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css') ?>
 <?php $this->headLink()->appendStylesheet('css/github-activity.min.css') ?>
 <?php $this->inlineScript()->appendFile('//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js') ?>
 <?php $this->inlineScript()->appendFile($this->basePath() . 'js/github-activity.min.js') ?>
@@ -24,10 +23,13 @@ JS;
 $this->inlineScript()->appendScript($js)
 ?>
 <div id="pg-me" class="container text-center">
-        <div class="hero-unit">
-            Hello.
-        </div>
-        <h1>I'm Thomas Johnell.</h1>
+    <div class="hero-unit">
+        Hello.
+    </div>
+    <div>
+        <img class="usb" src="img/usb-black.png" />
+    </div>
+    <h1>I'm Thomas Johnell.</h1>
         <p>
             When I'm not busy building web applications, I'm watching football and contributing to open-source.
         </p>
@@ -63,9 +65,12 @@ $this->inlineScript()->appendScript($js)
         <h1>My capabilities.</h1>
         <p>PHP</p>
         <p>MySQL</p>
-        <p>OOP</p>
+        <p>Object-Oriented Programming</p>
         <p>Javascript</p>
         <p>SVN/Git</p>
+        <div>
+            <img class="usb" src="img/usb-white.png" />
+        </div>
         <button type="button" class="btn btn-lg">
             <a href="#">
                 download resume
