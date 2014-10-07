@@ -81,10 +81,13 @@ li.L5, li.L6, li.L7, li.L8 {
     padding-bottom: 50px;
 }
 
-#main-images .col-lg-4 {
-    padding: 0;
+#main-images {
     position: relative;
     top: 50px;
+}
+
+#main-images .col-lg-4 {
+    padding: 0;
 }
 
 #mobile-images {
