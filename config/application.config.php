@@ -2,12 +2,7 @@
 
 return array(
     'modules' => array(
-        'DoctrineModule',
-        'DoctrineORMModule',
-        //'ZendDeveloperTools',
-        'Application',
-        'LifecycleEvents',
-        'TwbBundle'
+        'Application'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
