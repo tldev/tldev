@@ -9,13 +9,13 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        return array();
     }
 
-    public function aboutAction() {
-        $date = new \DateTime('2011-06-26'); //When I started at booj
+    public function aboutAction()
+    {
+        $date     = new \DateTime('2011-06-26'); //When I started at booj
         $interval = $date->diff(new \DateTime());
-
 
         return new ViewModel(
             array(
@@ -24,15 +24,18 @@ class IndexController extends AbstractActionController
         );
     }
 
-    public function lazyAction() {
+    public function lazyAction()
+    {
         return new ViewModel();
     }
 
-    public function markersAction() {
+    public function markersAction()
+    {
         return array();
     }
 
-    public function contactAction() {
+    public function contactAction()
+    {
         return array();
     }
 }

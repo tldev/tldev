@@ -10,12 +10,7 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.3.*",
-        "zendframework/zend-developer-tools": "dev-master",
-        "zendframework/zftool": "dev-master",
-        "doctrine/doctrine-orm-module": "0.*",
-        "tldev/lifecycle-events": "dev-master",
-        "erusev/parsedown": "dev-master",
-        "neilime/zf2-twb-bundle": "2.*@stable",
-        "gedmo/doctrine-extensions": "2.*@stable"
+        "league/flysystem": "0.5.*",
+        "dropbox/dropbox-sdk": "~1.1"
     }
 }

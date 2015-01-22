@@ -3,12 +3,13 @@
 
 namespace Application\View\Helper;
 
-
 use Zend\Form\View\Helper\AbstractHelper;
 
-class Disqus extends AbstractHelper {
+class Disqus extends AbstractHelper
+{
 
-    public function __invoke() {
+    public function __invoke()
+    {
         $disqus_universal = <<<DISQUS
 <div id="disqus_thread"></div>
 <script type="text/javascript">
