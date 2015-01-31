@@ -29,7 +29,9 @@ class ResumeFilesystem implements FactoryInterface
         $resume_folder = isset($config['resume']['default_folder']) ? $config['resume']['default_folder'] : null;
         /** @var \Dropbox\Client $dropbox_client */
         $dropbox_client = $serviceLocator->get('DropboxClient');
-        $filesystem     = new Filesystem(new Dropbox($dropbox_client, $resume_folder));
+        /** @var \League\Flysystem\Cache\Adapter $cache */
+        $cache          = $serviceLocator->get('LocalFilesystemCache');
+        $filesystem     = new Filesystem(new Dropbox($dropbox_client, $resume_folder), $cache);
 
         return $filesystem;
     }

@@ -60,7 +60,8 @@ return array(
         'factories'          => array(
             'Application\Service\ResumeDownload' => 'Application\Service\Factory\ResumeDownload',
             'DropboxClient'                      => 'Application\Service\Factory\DropboxClient',
-            'ResumeFilesystem'                   => 'Application\Service\Factory\ResumeFilesystem'
+            'ResumeFilesystem'                   => 'Application\Service\Factory\ResumeFilesystem',
+            'LocalFilesystemCache'               => 'Application\Service\Factory\LocalFilesystemCache'
         ),
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',

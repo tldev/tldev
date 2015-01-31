@@ -10,5 +10,8 @@ return array(
         'access_token'      => 'bin/key.json',
         'client_identifier' => 'tldev',
         'resume_folder'     => 'tldev'
+    ),
+    'local_filesystem_cache' => array(
+        'path' => 'data/cache/filesystem'
     )
 );

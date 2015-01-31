@@ -19,6 +19,11 @@ $js = <<<JS
     });
 
     Swipe(document.getElementById('mobile-slider'), {auto:5000});
+
+    $("#resume-button").on('click', function(e) {
+        e.preventDefault();
+        $("#resume-options").toggle();
+    });
 JS;
 $this->inlineScript()->appendScript($js)
 ?>
@@ -30,9 +35,9 @@ $this->inlineScript()->appendScript($js)
         <img class="usb" src="img/usb-black.png" />
     </div>
     <h1>I'm Thomas Johnell.</h1>
-        <p>
-            When I'm not busy building web applications, I'm watching football and contributing to open-source.
-        </p>
+    <p>
+        When I'm not busy building web applications, I'm watching football and contributing to open-source.
+    </p>
 </div>
 <div id="main-images" class="container hidden-xs hidden-sm hidden-md">
     <div class="col-lg-4">
@@ -71,11 +76,28 @@ $this->inlineScript()->appendScript($js)
         <div>
             <img class="usb" src="img/usb-white.png" />
         </div>
-        <button type="button" class="btn btn-lg">
+        <button id="resume-button" type="button" class="btn btn-lg">
             <a href="#">
                 download resume
             </a>
         </button>
+        <div id="resume-options" style="display:none;">
+            <button type="button" class="btn btn-lg">
+                <a href="<?= $this->url('download', array('filename' => 'ThomasJohnellResume', 'ext' => 'pdf')); ?>">
+                    pdf
+                </a>
+            </button>
+            <button type="button" class="btn btn-lg">
+                <a href="<?= $this->url('download', array('filename' => 'ThomasJohnellResume', 'ext' => 'docx')); ?>">
+                    docx
+                </a>
+            </button>
+            <button type="button" class="btn btn-lg">
+                <a href="<?= $this->url('download', array('filename' => 'ThomasJohnellResume', 'ext' => 'txt')); ?>">
+                    txt
+                </a>
+            </button>
+        </div>
     </div>
 </div>
 <div id="pg-github">
