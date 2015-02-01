@@ -30,8 +30,8 @@ class ResumeFilesystem implements FactoryInterface
         /** @var \Dropbox\Client $dropbox_client */
         $dropbox_client = $serviceLocator->get('DropboxClient');
         /** @var \League\Flysystem\Cache\Adapter $cache */
-        $cache          = $serviceLocator->get('LocalFilesystemCache');
-        $filesystem     = new Filesystem(new Dropbox($dropbox_client, $resume_folder), $cache);
+        $cache      = $serviceLocator->get('LocalFilesystemCache');
+        $filesystem = new Filesystem(new Dropbox($dropbox_client, $resume_folder), $cache);
 
         return $filesystem;
     }

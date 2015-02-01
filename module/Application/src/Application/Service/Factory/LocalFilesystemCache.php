@@ -35,8 +35,7 @@ class LocalFilesystemCache implements FactoryInterface
         }
         $path = $config['local_filesystem_cache']['path'];
 
-        if(!is_dir($path))
-        {
+        if (!is_dir($path)) {
             mkdir($path);
         }
         $local = new Local($path);
