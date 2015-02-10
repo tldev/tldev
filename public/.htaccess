@@ -1,4 +1,8 @@
 RewriteEngine On
+# Resource caching
+<FilesMatch "\.(gif|jpe?g|png|ico|css|js|swf)$">
+     Header set Cache-Control "max-age=172800, public, must-revalidate"
+</FilesMatch>
 # The following rule tells Apache that if the requested filename
 # exists, simply serve it.
 RewriteCond %{REQUEST_FILENAME} -s [OR]
