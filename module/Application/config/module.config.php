@@ -43,6 +43,16 @@ return array(
                     )
                 )
             ),
+            'resume' => array(
+                'type'    => 'literal',
+                'options' => array(
+                    'route'    => '/resume',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Index',
+                        'action'     => 'resume'
+                    )
+                )
+            ),
             'download' => array(
                 'type'    => 'regex',
                 'options' => array(

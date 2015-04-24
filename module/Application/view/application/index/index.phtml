@@ -19,11 +19,6 @@ $js = <<<JS
     });
 
     Swipe(document.getElementById('mobile-slider'), {auto:5000});
-
-    $("#resume-button").on('click', function(e) {
-        e.preventDefault();
-        $("#resume-options").toggle();
-    });
 JS;
 $this->inlineScript()->appendScript($js)
 ?>
@@ -77,27 +72,10 @@ $this->inlineScript()->appendScript($js)
             <img class="usb" src="img/usb-white.png" />
         </div>
         <button id="resume-button" type="button" class="btn btn-lg">
-            <a href="#">
-                download resume
+            <a href="<?= $this->url('resume') ?>">
+                resume
             </a>
         </button>
-        <div id="resume-options" style="display:none;">
-            <button type="button" class="btn btn-lg">
-                <a href="<?= $this->url('download', array('filename' => 'ThomasJohnellResume', 'ext' => 'pdf')); ?>">
-                    pdf
-                </a>
-            </button>
-            <button type="button" class="btn btn-lg">
-                <a href="<?= $this->url('download', array('filename' => 'ThomasJohnellResume', 'ext' => 'docx')); ?>">
-                    docx
-                </a>
-            </button>
-            <button type="button" class="btn btn-lg">
-                <a href="<?= $this->url('download', array('filename' => 'ThomasJohnellResume', 'ext' => 'txt')); ?>">
-                    txt
-                </a>
-            </button>
-        </div>
     </div>
 </div>
 <div id="pg-github">

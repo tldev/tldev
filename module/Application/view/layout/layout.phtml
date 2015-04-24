@@ -14,7 +14,7 @@
                     ->prependStylesheet('//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css')
                     ->prependStylesheet($this->basePath() . '/css/style.css')
                     ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="navbar navbar-static-top">
@@ -27,7 +27,10 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="<?= $this->url('index', array('uri' => '')) ?>">
-                <img src="img/tldev-logo.png" class="hidden-xs"/>THE LAZY DEVELOPER</a>
+                <img src="img/tldev-logo.png" />
+                <span class="hidden-xs">THE LAZY DEVELOPER</span>
+                <span class="visible-xs">tl;dev</span>
+            </a>
         </div>
         <div class="navbar-collapse collapse no-transition">
             <ul class="nav navbar-nav navbar-right">
@@ -37,8 +40,7 @@
                         github
                     </a>
                 </li>
-                <li><a href="<?= $this->url('about', array('uri' => 'about')) ?>">about</a></li>
-                <li><a href="<?= $this->url('contact') ?>">contact</a></li>
+                <li><a href="<?= $this->url('resume') ?>">resume</a></li>
             </ul>
         </div>
     </div>
@@ -47,7 +49,7 @@
 <div class="footer">
     <div class="container">
         <ul class="list-unstyled list-inline text-center">
-            <li><a target="_blank" href="http://www.linkedin.com/pub/thomas-johnell/90/b16/3ba">linkedin</a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/tldev">linkedin</a></li>
             <li><a target="_blank" href="https://www.facebook.com/thomas.johnell">facebook</a></li>
             <li><a target="_blank" href="https://github.com/tldev">github</a></li>
             <li><a target="_blank" href="https://plus.google.com/u/0/117288347138080289706/">google+</a></li>

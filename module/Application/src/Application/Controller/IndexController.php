@@ -38,4 +38,9 @@ class IndexController extends AbstractActionController
     {
         return array();
     }
+
+    public function resumeAction()
+    {
+        return array();
+    }
 }
