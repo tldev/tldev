@@ -194,8 +194,13 @@ li.L5, li.L6, li.L7, li.L8 {
 }
 
 #github-feed .gha-push-small {
-    height: 0px;
+    height: 0;
 }
+
+#github-feed .gha-gravatar {
+    display:none;
+}
+
 
 @media (max-width : 480px) {
     #github-feed {
