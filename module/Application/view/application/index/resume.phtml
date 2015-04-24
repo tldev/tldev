@@ -1,22 +1,16 @@
 <div class="container resume">
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-sm-push-6">
-            <div id="resume-options" class="pull-right-sm">
-                <button type="button" class="btn btn-lg button-block-xs">
-                    <a href="<?= $this->url('download', array('filename' => 'ThomasJohnellResume', 'ext' => 'pdf')); ?>">
-                        pdf
-                    </a>
-                </button>
-                <button type="button" class="btn btn-lg button-block-xs">
-                    <a href="<?= $this->url('download', array('filename' => 'ThomasJohnellResume', 'ext' => 'docx')); ?>">
-                        docx
-                    </a>
-                </button>
-                <button type="button" class="btn btn-lg button-block-xs">
-                    <a href="<?= $this->url('download', array('filename' => 'ThomasJohnellResume', 'ext' => 'txt')); ?>">
-                        txt
-                    </a>
-                </button>
+            <div class="download-options pull-right-sm">
+                <a href="<?= $this->url('download', array('filename' => 'ThomasJohnellResume', 'ext' => 'pdf')); ?>">
+                    pdf
+                </a>
+                <a href="<?= $this->url('download', array('filename' => 'ThomasJohnellResume', 'ext' => 'docx')); ?>">
+                    docx
+                </a>
+                <a href="<?= $this->url('download', array('filename' => 'ThomasJohnellResume', 'ext' => 'txt')); ?>">
+                    txt
+                </a>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-sm-pull-6">
